@@ -6,30 +6,37 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background: #111217;
   display: flex;
   min-height: 100vh;
-  color: #111;
+  color: white;
 }
 
 /* SIDEBAR */
 .sidebar {
-  width: 260px;
-  background: #ffffff;
-  border-right: 1px solid #dcdcdc;
+  width: 95px;
+  background: #0d0d0d;
+  border-right: 1px solid #1f1f1f;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 25px 25px 20px;
+  padding: 25px 18px 20px;
+  transition: width 0.35s ease;
+  overflow: hidden;
 }
 
+.sidebar:hover {
+  width: 260px;
+}
+
+/* PROFILE */
 .profile {
   text-align: center;
 }
 
 .profile-icon {
-  width: 95px;
-  height: 95px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: linear-gradient(135deg, #4f7cff, #8b3dff);
   margin: 0 auto 18px;
@@ -37,16 +44,42 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  font-size: 24px;
+  transition: all 0.35s ease;
+}
+
+.sidebar:hover .profile-icon {
+  width: 95px;
+  height: 95px;
   font-size: 40px;
+}
+
+/* Hide text initially */
+.profile h2,
+.profile p,
+.nav-links span,
+.sidebar-footer {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Show text on hover */
+.sidebar:hover .profile h2,
+.sidebar:hover .profile p,
+.sidebar:hover .nav-links span,
+.sidebar:hover .sidebar-footer {
+  opacity: 1;
 }
 
 .profile h2 {
   font-size: 20px;
   margin-bottom: 6px;
+  color: white;
 }
 
 .profile p {
-  color: #666;
+  color: #aaa;
   font-size: 15px;
 }
 
@@ -60,29 +93,29 @@ body {
   align-items: center;
   gap: 18px;
   text-decoration: none;
-  color: #222;
-  padding: 14px 16px;
-  border-radius: 10px;
-  margin-bottom: 8px;
+  color: #d4d4d4;
+  padding: 14px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
   transition: 0.3s ease;
   font-size: 18px;
 }
 
 .nav-links a:hover {
-  background: #f0f0f0;
+  background: #1c1c1c;
 }
 
 .nav-links i {
-  font-size: 18px;
-  width: 20px;
+  font-size: 20px;
+  min-width: 24px;
 }
 
 /* FOOTER */
 .sidebar-footer {
   text-align: center;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #222;
   padding-top: 22px;
-  color: #999;
+  color: #777;
   font-size: 14px;
 }
 
@@ -112,8 +145,8 @@ body {
 }
 
 .card {
-  background: white;
-  border: 1px solid #ddd;
+  background: #1d1e24;
+  border: 1px solid #34353d;
   border-radius: 18px;
   padding: 28px 24px;
   width: 325px;
@@ -131,9 +164,13 @@ body {
 }
 
 .card p {
-  color: #555;
+  color: #a8a8b3;
   line-height: 1.7;
   font-size: 16px;
+}
+
+.subtitle {
+  color: #a8a8b3;
 }
 
 /* RESPONSIVE */
